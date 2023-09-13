@@ -7,12 +7,13 @@
 Для виконання цього завдання потрібно використати метод forEach() і властивості навігації по DOM.
 */
 
-const numberOfCategories = document.querySelectorAll(".item");
+const categoriesList = document.querySelector("ul#categories")
+const numberOfCategories = document.querySelectorAll("ul#categories .item");
 console.log("Number of categories:", numberOfCategories.length);
 
 numberOfCategories.forEach((category) => {
-    const categoryName = category.querySelector("h2").textContent;
-    const categoryElementsCount = category.querySelectorAll("li").length;
+    const categoryName = category.children[0].textContent;
+    const categoryElementsCount = category.children[1].children.length;
 
     console.log(`Category: ${categoryName}`);
     console.log(`Elements: ${categoryElementsCount}`);
